@@ -1,12 +1,15 @@
 services:
   stb-control:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: stb-control:latest
+    image: ghcr.io/jarcos-al/stb-controller:latest
+    # Para build local descomenta las siguientes líneas y comenta image de arriba:
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    # image: stb-control:local
     container_name: stb-control
     restart: unless-stopped
-    network_mode: host
+    ports:
+      - "${STB_PORT:-8080}:8080"
     volumes:
       - ./data:/data
       - ./config:/config
