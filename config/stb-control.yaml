@@ -1,0 +1,34 @@
+app:
+  name: "STB Control Panel"
+  host: "0.0.0.0"
+  port: 8080
+  debug: false
+  secret_key: "${SECRET_KEY:-dev-secret-change-me}"
+
+auth:
+  enabled: false  # Set to true and configure password_hash for production
+  method: "basic"
+  username: "${AUTH_USER:-admin}"
+  password_hash: "${AUTH_PASSWORD_HASH:-admin}"
+
+devices:
+  - name: "Qviart Dual (G-MScreen)"
+    host: "192.168.50.37"
+    port: 20000
+    adapter: "gmscreen"
+  # - name: "Demo STB (Simulador)"
+  #   host: "127.0.0.1"
+  #   port: 0
+  #   adapter: "mock"
+
+database:
+  path: "./data/stbcontrol.db"
+
+cache:
+  epg_ttl: 300
+  channels_ttl: 3600
+  status_poll: 5
+
+logging:
+  level: "${LOG_LEVEL:-INFO}"
+  format: "json"

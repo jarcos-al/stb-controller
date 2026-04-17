@@ -1,0 +1,35 @@
+# Core
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.4
+pydantic-settings==2.7.1
+
+# Async HTTP client
+httpx==0.28.1
+
+# Database
+aiosqlite==0.20.0
+
+# Config
+pyyaml==6.0.2
+
+# Auth
+python-multipart==0.0.20
+bcrypt==4.2.1
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+
+# Logging
+structlog==24.4.0
+
+# IR Bridge (optional)
+# broadlink==0.19.0
+
+# Utils
+python-decouple==3.8
+
+# ADB
+adb-shell==0.4.4
+cryptography==42.0.5
+aiofiles==23.2.1
+async-timeout==4.0.3

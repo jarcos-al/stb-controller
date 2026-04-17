@@ -1,0 +1,26 @@
+services:
+  stb-control:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: stb-control:latest
+    container_name: stb-control
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ./data:/data
+      - ./config:/config
+    environment:
+      - SECRET_KEY=${SECRET_KEY:-dev-secret-change-me}
+      - AUTH_USER=${AUTH_USER:-admin}
+      - AUTH_PASSWORD_HASH=${AUTH_PASSWORD_HASH:-admin}
+      - TZ=${TZ:-Europe/Madrid}
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - CONFIG_DIR=/config
+      - DATA_DIR=/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
