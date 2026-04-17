@@ -29,7 +29,14 @@ El protocolo propietario TCP del puerto 20000 fue completamente **ingeniería in
 
 ## Capturas
 
-> *TODO: Añadir screenshots de la interfaz*
+### Mando a distancia virtual
+![Remote Control](docs/screenshots/remote-control.png)
+
+### Lista de canales con bouquets
+![Channels](docs/screenshots/channels.png)
+
+### Ajustes de conexión
+![Settings](docs/screenshots/settings.png)
 
 ## Inicio rápido
 
